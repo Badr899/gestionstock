@@ -1,0 +1,117 @@
+/* Corps de page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/bg-stock.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay central */
+.page-overlay {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Titres */
+.page-overlay h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Formulaire */
+.page-overlay form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* espace entre champs */
+    width: 100%;
+}
+
+/* Champs du formulaire */
+.page-overlay form input, 
+.page-overlay form select {
+    padding: 8px 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Boutons communs */
+
+/* Corps de page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/bg-stock.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay central */
+.page-overlay {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Titres */
+.page-overlay h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Formulaire */
+
+.page-overlay form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* espace entre champs */
+    width: 100%;
+}
+
+
+/* Boutons communs */
+.page-overlay form button,
+.page-overlay > a,
+.delete-form .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Couleurs des boutons */
+.page-overlay form button { background-color: #2c3e50; }
+.page-overlay form button:hover { background-color: #36628d; }
+
+.page-overlay > a { background-color: #2980b9; text-decoration: none; display: inline-block; }
+.page-overlay > a:hover { background-color: #3498db; }
+
+.delete-form .btn { background-color: #e74c3c; }
+.delete-form .btn:hover { background-color: #c0392b; }
+
+/* Responsive simple */

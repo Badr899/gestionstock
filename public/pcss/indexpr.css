@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/bg-stock.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+/* Overlay central */
+.page-overlay {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 900px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Titres */
+.page-overlay h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Tableau */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+.table th {
+    background: #2c3e50;
+    color: white;
+    font-weight: bold;
+}
+
+.table tr:hover {
+    background-color: #ecf0f1;
+}
+
+/* Liens actions "show" et "edit" */
+.table a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 3px;
+    background-color: #27ae60; /* vert stock */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* Boutons principaux "Nouveau produit" et "Return" */
+.page-overlay > a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background: #2c3e50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.page-overlay > a:hover {
+    background: #36628d;
+}
+
+/* Formulaire de suppression inline */
+.delete-form {
+    display: inline-block;
+    margin: 0 3px;
+}
+
+/* Bouton Supprimer */
+.delete-form .btn {
+    padding: 5px 12px;
+    background-color: #e74c3c; /* rouge pour suppression */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.delete-form .btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive simple */
+@media (max-width: 768px) {
+    .page-overlay {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .table th, .table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .page-overlay > a {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

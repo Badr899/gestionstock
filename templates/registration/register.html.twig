@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+
+    <h1>Register</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+             
+
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+             
+
+     
+        <button type="submit" class="btn">Register</button>
+
+    {{ form_end(registrationForm) }}
+
+        <p>Already have an account? <a href="{{ path('app_login') }}">Login here</a></p>
+         
+
+{% endblock %}

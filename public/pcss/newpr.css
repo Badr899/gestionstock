@@ -1,0 +1,81 @@
+/* Corps de page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/bg-stock.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay central */
+.page-overlay {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Titres */
+.page-overlay h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Formulaire Symfony */
+.page-overlay form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* espace entre champs */
+    width: 100%;
+}
+
+/* Champs input/select/textarea */
+.page-overlay form input,
+.page-overlay form select {
+    padding: 8px 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Bouton Save / Update */
+.page-overlay form button {
+    padding: 10px 20px;
+    background-color: #2c3e50; /* bleu foncé */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-overlay form button:hover {
+    background-color: #36628d;
+    transform: translateY(-1px);
+}
+
+/* Lien "back to list" */
+.page-overlay > a {
+    display: inline-block;
+    margin: 10px 5px 0 0;
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.page-overlay > a:hover {
+    background-color: #3498db;
+}

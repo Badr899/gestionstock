@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit index{% endblock %}
+
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('pcss/indexpr.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="page-overlay">
+    <h1>Produit index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Stock</th>
+                <th>StockMin</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                
+                <td>{{ produit.nom }}</td>
+                <td>{{ produit.prix }}</td>
+                <td {% if produit.stock <= produit.stockMin %} style="background-color: #e53935; color: white;" {% endif %}>
+                    {{ produit.stock }}
+                     {% if produit.stock <= produit.stockMin %}
+                            ⚠ Stock faible !
+                              {% endif %}
+               </td>
+
+                <td>{{ produit.stockMin }}</td>
+                <td>
+                    <a href="{{ path('app_produit_show', {'id': produit.id}) }}">show</a>
+                    <a href="{{ path('app_produit_edit', {'id': produit.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_produit_new') }}">Nouveau produit</a>
+        <a href="{{ path('app_fournisseur') }}">Return</a>
+
+    </div>
+{% endblock %}

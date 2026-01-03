@@ -1,0 +1,119 @@
+/* BACKGROUND */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ECEFF1, #90CAF9); /* gris clair -> bleu clair */
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+    height: 70px;
+    background: rgba(33, 150, 243, 0.85);
+    display: flex;
+    justify-content: space-between; /* espace entre gauche et droite */
+    align-items: center;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* espace entre logo et nom */
+}
+
+.navbar-left img {
+    height: 40px;
+}
+
+.navbar-left span {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar-right .button {
+    
+    padding: 8px 15px;
+    background: #FFB300; /* orange doré */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+    margin-right: 60px;
+}
+
+.navbar-right .button:hover {
+    background: #FFA000;
+    transform: translateY(-1px);
+}
+
+/* CONTENU CENTRAL */
+h1 {
+    text-align: center;
+    margin-top: 100px; /* laisse la place pour navbar */
+    font-size: 32px;
+    color: #1a1a1a;
+}
+
+/* TABLE PRODUITS */
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(33, 150, 243, 0.1);
+}
+
+/* BOUTONS */
+.button {
+    display: inline-block;
+    margin-left: 350px;
+    padding: 12px 25px;
+    background: #FFB300; /* orange / doré */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #FFA000;
+    transform: translateY(-2px);
+}
+
+/* MOBILE / RESPONSIVE */
+@media (max-width: 768px) {
+    table, th, td {
+        font-size: 14px;
+    }
+    .navbar span {
+        font-size: 18px;
+    }
+    .button {
+        padding: 10px 20px;
+    }
+}

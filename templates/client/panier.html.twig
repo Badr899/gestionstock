@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Panier{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('clpro/panier.css') }}">
+{% endblock %}
+
+{% block body %}
+
+
+
+<nav class="navbar">
+    <div class="navbar-left">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo">
+        <span>StockPlus</span>
+    </div>
+    <div class="navbar-right">
+        <a href="{{ path('client_produits') }}" class="button">⬅ Retour</a>
+    </div>
+</nav>
+
+
+<h1>🛒 Mon Panier</h1>
+
+{% if items is empty %}
+    <p>Votre panier est vide.</p>
+{% else %}
+<table>
+    <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.produit.nom }}</td>
+            <td>{{ item.produit.prix }}</td>
+            <td>{{ item.quantite }}</td>
+            <td>{{ item.total }}</td>
+            <td>
+                <form action="{{ path('client_panier_remove') }}" method="post">
+                    <input type="hidden" name="produit_id" value="{{ item.produit.id }}">
+                    <button type="submit" class="button" style="background:#e74c3c;">
+                        ❌ Supprimer
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>Total général : {{ total }} MAD</h3>
+
+{% endif %} 
+
+{% endblock %}
+

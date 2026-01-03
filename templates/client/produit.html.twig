@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('clpro/produitaffichage.css') }}">
+{% endblock %}
+
+{% block body %}
+<nav class="navbar">
+    <div class="navbar-left">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo">
+        <span>StockPlus</span>
+    </div>
+    <div class="navbar-right">
+        <a href="{{ path('app_client') }}" class="button">⬅ Retour</a>
+    </div>
+</nav>
+
+<h1>📦 Produits disponibles</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Stock</th>
+            <th>Prix</th>
+            <th>Email fournisseur</th>
+             <th>Quantité</th>
+            <th>Acheter</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for produit in produits %}
+        <tr>
+            <td>{{ produit.nom }}</td>
+            <td>{{ produit.stock }}</td>
+            <td>{{ produit.prix }}</td>
+           
+            <td>{{ produit.fournisseur.email }}</td>
+
+  <!-- Quantité -->
+             <td>
+        <form action="{{ path('client_panier_add') }}" method="post">
+            <input type="hidden" name="produit_id" value="{{ produit.id }}">
+
+            <input type="number"
+                   name="quantite"
+                   min="1"
+                   max="{{ produit.stock }}"
+                   value="1"
+                   style="width:60px;"
+                   required>
+    </td>
+
+    <td>
+            <button type="submit" class="button">
+                🛒 Acheter
+            </button>
+        </form>
+    </td>
+            
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="5">Aucun produit</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<div style="text-align:center; margin-top:25px;">
+    <a href="{{ path('client_panier') }}" class="button">
+        🧾 Voir mon panier
+    </a>
+</div>
+
+<br>
+
+{% endblock %}

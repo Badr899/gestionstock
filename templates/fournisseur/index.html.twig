@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fournisseur{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/fournisseur.css') }}">
+{% endblock %}
+
+
+{% block body %}
+
+<nav class="navbar">
+    <img src="{{ asset('images/logo.png') }}" alt="Logo">
+    <span>MyStock</span>
+</nav>
+
+
+<div class="example-wrapper">
+    <h1>Bienvenue Fournisseur</h1>
+    <p>Vous pouvez gérer vos produits ici.</p>
+    <a href="{{ path('app_logout') }}" class="button">Logout</a>
+    <a href="{{ path('app_produit_index') }}" class="button">Gérer tes produits</a>
+    <a href="{{ path('app_produit_new') }}" class="button">Ajouter un produit</a>
+
+    
+
+    
+    
+</div>
+
+
+{% endblock %}
